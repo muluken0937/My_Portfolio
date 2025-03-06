@@ -8,12 +8,7 @@ const Hero = () => {
       <img
          src={profile}
         alt="muluken"
-        style={{
-          width: "250px",
-          height: "250px",
-          borderRadius: "50%",
-          objectFit: "cover",
-        }}
+        
       />
 
       <h1><span>I'm Muluken Jenber</span>, Full Stack Developer | Mobile & Web  .</h1>
