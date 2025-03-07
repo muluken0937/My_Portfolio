@@ -1,115 +1,141 @@
-.about{
+.about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 80px;
     margin: 80px 170px;
 }
-.about-title{
+
+.about-title {
     position: relative;
 }
-.about-title h1{
-    padding: 0px 30px;
+
+.about-title h1 {
     font-size: 80px;
     font-weight: 600;
+    padding: 0 30px;
 }
+
 .about-title h1 span {
-    background: linear-gradient(270deg, #DF8908 10% , #B415FF 100%);
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
     background-clip: text;
-     -webkit-background-composite: text;
-     -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 .about-title img {
-    width: 205px;
-    height: 90px;
-    border-radius: 60%;
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 205px;
+    height: 90px;
+    border-radius: 60%;
     z-index: -1;
 }
-.about-section{
+
+.about-section {
     display: flex;
     gap: 80px;
 }
-.about-left {
-    height: 100%;
-    width: 100%;
-    align-self: center;
-}
-.about-left img{
+
+.about-left img {
     border-radius: 20%;
-
 }
 
-.about-right{
+.about-right {
     display: flex;
     flex-direction: column;
     gap: 80px;
 }
-.about-para{
+
+.about-para {
+    font-size: 24px;
+    font-weight: 500;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-skills {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.about-skill {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    transition: 0.3s;
+}
+
+.about-skill p {
+    min-width: 150px;
     font-size: 24px;
     font-weight: 500;
 }
-.about-skills{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.about-skill{
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    transition: 0.3s;
-}
-.about-skill p{
-    min-width: 150px;
-    font-size: 24px;
-    font-weight: 500px;
-}
-.about-skill hr{
-    outline: none;
-    border: none;
-    width: 50%;
+
+.skill-bar {
     height: 8px;
-    border: 50%;
-    background: linear-gradient(264deg,#DF8908 -5.09%,#B415FF 106.28%);
+    width: 10%; /* Starts small */
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    border: none;
+    outline: none;
+    animation: fill-bar 2.5s ease-in-out forwards;
 }
-.about-achievements{
+
+.about-skill:hover {
+    transform: scale(1.05);
+}
+
+/* Dynamic animation using CSS variable for final width */
+@keyframes fill-bar {
+    from {
+        width: 10%;
+    }
+    to {
+        width: var(--final-width, 50%);
+    }
+}
+
+/* Achievements Section */
+.about-achievements {
     display: flex;
     width: 100%;
     justify-content: space-around;
     margin-bottom: 80px;
-
 }
-.about-achievement{
+
+.about-achievement {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     transition: 0.5s;
 }
-.about-achievement h1{
+
+.about-achievement h1 {
     font-size: 60px;
     font-weight: 700;
     background: linear-gradient(270deg, #DF8908 50.41%, #B415FF 90.25%);
     background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.about-achievement p{
+
+.about-achievement p {
     font-size: 22px;
     font-weight: 500;
 }
-.about-skill:hover{
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-.about-achievement:hover{
+
+.about-achievement:hover {
     transform: scale(1.15);
-    transition: 0.5s;
+}
+
+/* Horizontal dividers */
+.about-achievements hr {
+    width: 1px;
+    height: 80px;
+    background: #ddd;
+    border: none;
 }
