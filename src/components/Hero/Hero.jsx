@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Hero.css";
 import profile from "../../assets/profile.jpg";
 
 const Hero = () => {
+  const [text, setText] = useState("");
+  const fullText = "I'm Muluken Jenber";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100); // Adjust speed here (100ms per letter)
+    return () => clearInterval(interval);
+  }, [fullText]);
+
   return (
     <div className="hero">
-      <img src={profile} alt="muluken" />
+      <div className="image-container">
+        <img src={profile} alt="muluken" />
+        <div className="curve-line curve-line-1"></div>
+        <div className="curve-line curve-line-2"></div>
+        <div className="spot spot-1"></div>
+        <div className="spot spot-2"></div>
+        
+      </div>
 
       <h1>
-        <span>I'm Muluken Jenber</span>, Full Stack Developer | Mobile & Web .
+        <span className="popup-text">{text}</span>, Full Stack Developer | Mobile & Web .
       </h1>
       
       <p>
-        I'm a Full-Stack Mobile & Web Developer, passionate about building
-        creative and efficient solutions. Always eager to learn new technologies
-        and improve my skills to deliver better applications.
+      I am a Full-Stack Mobile & Web Developer passionate about creating efficient solutions and eager to learn 
+      new technologies for better application delivery.
       </p>
+      
 
       <div className="hero-action">
         <div className="hero-connect">Connect With Me</div>

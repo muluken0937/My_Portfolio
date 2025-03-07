@@ -1,79 +1,249 @@
-.hero{
+.hero {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 35px;
+    padding: 20px;
+    text-align: center;
 }
-.hero img{
-    margin-top: 150px;
-    width: 300px;
-    height: 300px;
+
+.image-container {
+    position: relative;
+    margin-top: 100px;
+    width: 250px;
+    height: 250px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
-.hero h1{
 
-    text-align: center;
-    width: 70%;
-    font-size: 80px;
+.curve-line {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #B415FF;
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+    z-index: 0;
+    animation: vibrate 2s infinite ease-in-out;
+}
+
+.curve-line-1 {
+    border-color: #DF8908;
+    animation-delay: 0.5s;
+}
+
+.curve-line-2 {
+    border-color: #B415FF;
+    animation-delay: 1s;
+}
+
+.spot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #DF8908;
+    border-radius: 50%;
+    z-index: 2;
+    animation: spotMove 4s infinite ease-in-out;
+}
+
+.spot-1 {
+    top: -30px;
+    left: 50%;
+    background-color: #DF8908;
+}
+
+.spot-2 {
+    bottom: -30px;
+    left: 50%;
+    background-color: #B415FF;
+}
+
+.spot-3 {
+    top: 50%;
+    left: -30px;
+    background-color: #DF8908;
+}
+
+.spot-4 {
+    top: 50%;
+    right: -30px;
+    background-color: #B415FF;
+}
+
+@keyframes vibrate {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-5px, -5px) rotate(-2deg);
+    }
+    50% {
+        transform: translate(5px, 5px) rotate(2deg);
+    }
+    75% {
+        transform: translate(-5px, 5px) rotate(-2deg);
+    }
+}
+
+@keyframes spotMove {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-15px);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+    75% {
+        transform: translateX(-15px);
+    }
+}
+
+.hero h1 {
+    width: 90%;
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 600;
+    line-height: 1.2;
 }
 
-
-.hero h1 span {
+.popup-text {
+    display: inline-block;
     background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
-    position: relative;
-    animation: waterWave 3s infinite ease-in-out;
 }
 
-@keyframes waterWave {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-5px) rotate(2deg);
+.popup-text span {
+    display: inline-block;
+    animation: popup 0.5s ease-in-out;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0);
     }
     50% {
-        transform: translateY(0) rotate(0deg);
+        transform: scale(1.2);
     }
-    75% {
-        transform: translateY(5px) rotate(-2deg);
+    100% {
+        transform: scale(1);
     }
 }
-.hero p{
-    width: 50%;
-    text-align: center;
-    font-size: 24px;
-    line-height: 40px;
+
+.hero p {
+    width: 90%;
+    font-size: clamp(18px, 4vw, 24px);
+    line-height: 1.5;
 }
-.hero-action{
+
+.hero-action {
     display: flex;
     align-items: center;
-    gap: 25px;
-    font-size: 24px;
+    gap: 20px;
+    font-size: clamp(18px, 4vw, 24px);
     font-weight: 500;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.hero-connect{
-    padding: 25px 45px;
-    border-radius: 50px;
-    background: linear-gradient(264deg,#DF8908 -5.09% , #B415FF 106.28%);
-    cursor: pointer;
 
+.hero-connect {
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    cursor: pointer;
+    transition: 0.5s;
 }
-.hero-resume{
-    padding: 25px 75px;
+
+.hero-resume {
+    padding: 15px 30px;
     border-radius: 50px;
     border: 2px solid #FFF;
     cursor: pointer;
+    transition: 0.5s;
 }
-.hero-connect:hover{
-    border: 2px solid #FFF;
+
+.hero-connect:hover {
+    transform: scale(1.05);
 }
-.hero-resume:hover{
-    border-color: #B415FF ;
+
+.hero-resume:hover {
+    border-color: #B415FF;
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .curve-line {
+        width: 250px;
+        height: 250px;
+    }
+
+    .spot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 60px);
+    }
+
+    .hero p {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+
+    .hero-action {
+        gap: 15px;
+    }
+
+    .hero-connect, .hero-resume {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .curve-line {
+        width: 200px;
+        height: 200px;
+    }
+
+    .spot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .hero h1 {
+        font-size: clamp(24px, 8vw, 40px);
+    }
+
+    .hero p {
+        font-size: clamp(14px, 4vw, 18px);
+    }
+
+    .hero-action {
+        gap: 10px;
+    }
+
+    .hero-connect, .hero-resume {
+        padding: 8px 16px;
+    }
 }
