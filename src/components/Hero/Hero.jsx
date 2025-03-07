@@ -35,7 +35,7 @@ const Hero = () => {
       </h1>
       
       <p>
-      I am a Full-Stack Mobile & Web Developer passionate about creating efficient solutions and eager to learn 
+      I am a Full-Stack Mobile & Web Developer passionate about creating efficient solutions and eager <br/>to learn 
       new technologies for better application delivery.
       </p>
       
