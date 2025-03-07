@@ -139,3 +139,107 @@
     background: #ddd;
     border: none;
 }
+
+/* RESPONSIVENESS */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .about {
+        gap: 40px;
+        margin: 40px 30px;
+    }
+
+    .about-title h1 {
+        font-size: 50px;
+    }
+
+    .about-title img {
+        width: 120px;
+        height: 50px;
+        right: 5px;
+        bottom: -5px;
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-left img {
+        max-width: 250px;
+    }
+
+    .about-right {
+        gap: 30px;
+    }
+
+    .about-para {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .about-skill {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-skill p {
+        font-size: 18px;
+        min-width: unset;
+    }
+
+    .skill-bar {
+        width: 100%;
+    }
+
+    .about-achievements {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-achievements hr {
+        display: none;
+    }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+    .about {
+        gap: 30px;
+        margin: 30px 15px;
+    }
+
+    .about-title h1 {
+        font-size: 36px;
+    }
+
+    .about-title img {
+        display: none;
+    }
+
+    .about-para {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .about-skill {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .about-skill p {
+        font-size: 16px;
+    }
+
+    .about-achievement h1 {
+        font-size: 36px;
+    }
+
+    .about-achievement p {
+        font-size: 14px;
+    }
+}
