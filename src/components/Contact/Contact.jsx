@@ -20,36 +20,38 @@ const Contact = () => {
           </p>
           <div className="contact-details">
             <div className="contact-detail">
-              <Mail size={20}  />
+              <Mail size={20} />
               <span className="border px-2 py-1 rounded">
                 mulukenjenber@gmail.com
               </span>
             </div>
             <div className="contact-detail">
               <p>
-                <Phone size={20}  />
+                <Phone size={20} />
                 +251 937 908 221
               </p>
             </div>
             <div className="contact-detail">
-              {" "}
               <p>
-                <MapPin size={20}  />
+                <MapPin size={20} />
                 Addis Ababa, Ayer Tena
               </p>
             </div>
           </div>
         </div>
-        <form  className="contact-right">
-          <label htmlFor=""> Your Name</label>
-          <input type="text"  placeholder="enter your name" name="name"/>
-          <labe htmlFor=""> Your Email</labe>
-          <input type="email"  placeholder="enter your email" name="email"/>
-          <labe htmlFor=""> Write Your Message Here</labe>
-          <textarea type="text" rows="8" placeholder="enter your message"></textarea>
-          <button type="submit" className="contact-submit"> Submit now</button>
-
-
+        <form className="contact-right">
+          <label htmlFor="">Your Name</label>
+          <input type="text" placeholder="Enter your name" name="name" />
+          <label htmlFor="">Your Email</label>
+          <input type="email" placeholder="Enter your email" name="email" />
+          <label htmlFor="">Write Your Message Here</label>
+          <textarea
+            rows="8"
+            placeholder="Enter your message"
+          ></textarea>
+          <button type="submit" className="contact-submit">
+            Submit now
+          </button>
         </form>
       </div>
     </div>
