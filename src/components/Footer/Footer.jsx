@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import logo from "../../assets/logo.png";
 import { Mail } from "lucide-react";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -30,7 +31,7 @@ const Footer = () => {
         <div className="footer-bottom-right">
           <p>Terms of Service</p>
           <p>Privacy Policy</p>
-          <p>Connect with me</p>
+          <p><Link  to="contact" smooth={true} duration={500}>Connect with me</Link></p>
         </div>
       </div>
     </div>
