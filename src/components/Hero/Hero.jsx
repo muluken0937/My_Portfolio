@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
 import profile from "../../assets/profile.jpg";
+import { Link } from "react-scroll"; 
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -20,7 +21,7 @@ const Hero = () => {
   }, [fullText]);
 
   return (
-    <div className="hero">
+    <div id="home" className="hero">
       <div className="image-container">
         <img src={profile} alt="muluken" />
         <div className="curve-line curve-line-1"></div>
@@ -41,7 +42,7 @@ const Hero = () => {
       
 
       <div className="hero-action">
-        <div className="hero-connect">Connect With Me</div>
+        <div className="hero-connect"> <Link className="anchor-link"  to="contact" smooth={true} duration={500}>Connect With Me </Link></div>
         <div className="hero-resume">My Resume</div>
       </div>
     </div>

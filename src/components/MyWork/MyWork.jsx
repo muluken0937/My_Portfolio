@@ -6,7 +6,7 @@ import {ArrowRight} from 'lucide-react'
 
 const MyWork = () => {
   return (
-    <div className="MyWork">
+    <div id='work' className="MyWork">
         <div className="mywork-title">
             <h1>My Latest Work</h1>
             <img src={theme} alt=''/>
