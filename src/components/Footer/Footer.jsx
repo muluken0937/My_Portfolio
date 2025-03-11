@@ -6,6 +6,8 @@ import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
+    <div className="body">
+      <hr className="hs"/>
     <div className="footer">
       <div className="footer-top">
         <div className="footer-top-left">
@@ -34,6 +36,7 @@ const Footer = () => {
           <p><Link  to="contact" smooth={true} duration={500}>Connect with me</Link></p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
