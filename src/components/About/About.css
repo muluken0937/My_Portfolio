@@ -40,6 +40,8 @@
 
 .about-left img {
     border-radius: 20%;
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .about-right {
@@ -168,7 +170,7 @@
     }
 
     .about-left img {
-        max-width: 250px;
+        max-width: 450px; /* Adjust image size for tablets */
     }
 
     .about-right {
@@ -218,6 +220,10 @@
 
     .about-title img {
         display: none;
+    }
+
+    .about-left img {
+        max-width: 250px; /* Adjust image size for mobile */
     }
 
     .about-para {
