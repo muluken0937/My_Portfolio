@@ -11,8 +11,7 @@ const Footer = () => {
           <img src={logo} alt="Logo" />
           <p>
             I am a Full-Stack Mobile & Web Developer passionate about creating
-            efficient solutions and eager <br />
-            to learn new technologies for better application delivery.
+            efficient solutions and eager to learn new technologies for better application delivery.
           </p>
         </div>
         <div className="footer-top-right">
