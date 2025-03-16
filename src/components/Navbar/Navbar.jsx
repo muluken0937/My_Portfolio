@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll"; 
+import { Link } from "react-scroll";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import dash from "../../assets/shape1.png";
@@ -7,6 +7,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home"); // Set "home" as default
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -24,48 +25,102 @@ const Navbar = () => {
       </div>
       <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
         <li>
-          <Link to="home" smooth={true} duration={500} className="anchor-Link" onClick={closeMenu}>
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            className="anchor-Link"
+            onClick={() => {
+              closeMenu();
+              setActiveLink("home");
+            }}
+          >
             <p>Home</p>
           </Link>
-          {menuOpen === "home" ? (
-            <img src={dash} style={{ width: "50px", height: "15px" }} />
-          ) : null}
+          {activeLink === "home" && (
+            <img src={dash} style={{ width: "50px", height: "15px" }} alt="dash" />
+          )}
         </li>
         <li>
-          <Link to="about" smooth={true} duration={500} className="anchor-Link" onClick={closeMenu}>
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            className="anchor-Link"
+            onClick={() => {
+              closeMenu();
+              setActiveLink("about");
+            }}
+          >
             <p>About Me</p>
           </Link>
-          {menuOpen === "about" ? (
-            <img src={dash} style={{ width: "50px", height: "15px" }} />
-          ) : null}
+          {activeLink === "about" && (
+            <img src={dash} style={{ width: "50px", height: "15px" }} alt="dash" />
+          )}
         </li>
         <li>
-          <Link to="services" smooth={true} duration={500} className="anchor-Link" onClick={closeMenu}>
+          <Link
+            to="services"
+            smooth={true}
+            duration={500}
+            className="anchor-Link"
+            onClick={() => {
+              closeMenu();
+              setActiveLink("services");
+            }}
+          >
             <p>Services</p>
           </Link>
-          {menuOpen === "services" ? (
-            <img src={dash} style={{ width: "50px", height: "15px" }} />
-          ) : null}
+          {activeLink === "services" && (
+            <img src={dash} style={{ width: "50px", height: "15px" }} alt="dash" />
+          )}
         </li>
         <li>
-          <Link to="work" smooth={true} duration={500} className="anchor-Link" onClick={closeMenu}>
+          <Link
+            to="work"
+            smooth={true}
+            duration={500}
+            className="anchor-Link"
+            onClick={() => {
+              closeMenu();
+              setActiveLink("work");
+            }}
+          >
             <p>Portfolio</p>
           </Link>
-          {menuOpen === "work" ? (
-            <img src={dash} style={{ width: "50px", height: "15px" }} />
-          ) : null}
+          {activeLink === "work" && (
+            <img src={dash} style={{ width: "50px", height: "15px" }} alt="dash" />
+          )}
         </li>
         <li>
-          <Link to="contact" smooth={true} duration={500} className="anchor-Link" onClick={closeMenu}>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="anchor-Link"
+            onClick={() => {
+              closeMenu();
+              setActiveLink("contact");
+            }}
+          >
             <p>Contact</p>
           </Link>
-          {menuOpen === "contact" ? (
-            <img src={dash} style={{ width: "50px", height: "15px" }} />
-          ) : null}
+          {activeLink === "contact" && (
+            <img src={dash} style={{ width: "50px", height: "15px" }} alt="dash" />
+          )}
         </li>
       </ul>
-      <div className="nav-connect"> 
-        <Link className="anchor-link" to="contact" smooth={true} duration={500} onClick={closeMenu}>
+      <div className="nav-connect">
+        <Link
+          className="anchor-link"
+          to="contact"
+          smooth={true}
+          duration={500}
+          onClick={() => {
+            closeMenu();
+            setActiveLink("contact");
+          }}
+        >
           Connect With Me
         </Link>
       </div>
