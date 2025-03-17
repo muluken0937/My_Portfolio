@@ -32,10 +32,5 @@ const services_data = [
     }
 ];
 
-// () => {
-//   return (
-//     <div>services_data</div>
-//   )
-// }
 
 export default services_data

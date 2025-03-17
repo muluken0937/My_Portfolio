@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
+import { FaHtml5, FaCss3, FaJs, FaPython, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiDjango, SiMongodb, SiSqlite } from "react-icons/si";
 import "./About.css";
 import theme from "../../assets/shape1.png";
 import profile_img from "../../assets/profile1.jpg";
 
 const About = () => {
-  
   useEffect(() => {
     const counters = document.querySelectorAll(".count");
     counters.forEach((counter) => {
@@ -56,19 +57,27 @@ const About = () => {
 
           <div className="about-skills">
             {[
-              { name: "HTML & CSS", width: "90%" },
-              { name: "JavaScript", width: "65%" },
-              { name: "Python", width: "60%" },
-              { name: "React Js", width: "90%" },
-              { name: "React Native", width: "60%" },
-              { name: "Node Js", width: "80%" },
-              { name: "DJango", width: "50%" },
-              { name: "Mongo Db", width: "80%" },
-              { name: "SQLite", width: "55%" },
+              { name: "HTML & CSS", width: "90%", icon: <FaHtml5 /> },
+              { name: "JavaScript", width: "65%", icon: <FaJs /> },
+              { name: "Python", width: "60%", icon: <FaPython /> },
+              { name: "React Js", width: "90%", icon: <FaReact /> },
+              { name: "React Native", width: "60%", icon: <FaReact /> },
+              { name: "Node Js", width: "80%", icon: <FaNodeJs /> },
+              { name: "Django", width: "50%", icon: <SiDjango /> },
+              { name: "Mongo Db", width: "80%", icon: <SiMongodb /> },
+              { name: "SQLite", width: "55%", icon: <SiSqlite /> },
             ].map((skill, index) => (
               <div className="about-skill" key={index}>
-                <p>{skill.name}</p>
-                <hr className="skill-bar" style={{ "--final-width": skill.width }} />
+                <div className="skill-icon">{skill.icon}</div>
+                <div className="skill-details">
+                  <p>{skill.name}</p>
+                  <div className="skill-bar-container">
+                    <div
+                      className="skill-bar"
+                      style={{ width: skill.width }}
+                    ></div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
