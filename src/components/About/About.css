@@ -58,52 +58,60 @@
     flex-direction: column;
 }
 
+/* Horizontal Skills Section */
 .about-skills {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
 }
 
 .about-skill {
     display: flex;
     align-items: center;
-    gap: 20px;
-    transition: 0.3s;
-}
-
-.skill-icon {
-    font-size: 24px;
-    color: #DF8908; /* Icon color */
-}
-
-.about-skill p {
-    min-width: 150px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #d4d4d4;
-}
-
-.skill-bar {
-    height: 8px;
-    width: 10%; /* Starts small */
-    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
-    border: none;
-    outline: none;
-    animation: fill-bar 2.5s ease-in-out forwards;
+    gap: 15px;
+    width: 30%; /* Adjust width for 3 items per row */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-skill:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Dynamic animation using CSS variable for final width */
-@keyframes fill-bar {
-    from {
-        width: 10%;
-    }
-    to {
-        width: var(--final-width, 50%);
-    }
+.skill-icon {
+    font-size: 32px;
+    color: #DF8908; /* Icon color */
+}
+
+.skill-details {
+    flex-grow: 1;
+}
+
+.skill-details p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #d4d4d4;
+    margin-bottom: 10px;
+}
+
+.skill-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    border-radius: 5px;
+    transition: width 0.5s ease;
 }
 
 /* Achievements Section */
@@ -188,28 +196,12 @@
         text-align: left;
     }
 
-    .about-skill {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .about-skill p {
-        font-size: 18px;
-        min-width: unset;
-    }
-
-    .skill-bar {
-        width: 100%;
-    }
-
-    .about-achievements {
-        flex-direction: column;
-        align-items: center;
+    .about-skills {
         gap: 20px;
     }
 
-    .about-achievements hr {
-        display: none;
+    .about-skill {
+        width: 45%; /* Adjust width for 2 items per row */
     }
 }
 
@@ -238,13 +230,7 @@
     }
 
     .about-skill {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .about-skill p {
-        font-size: 16px;
+        width: 100%; /* Full width for mobile */
     }
 
     .about-achievement h1 {
