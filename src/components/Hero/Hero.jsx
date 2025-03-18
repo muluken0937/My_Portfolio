@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
 import profile from "../../assets/profile.jpg";
-import { Link } from "react-scroll"; 
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -28,22 +28,32 @@ const Hero = () => {
         <div className="curve-line curve-line-2"></div>
         <div className="spot spot-1"></div>
         <div className="spot spot-2"></div>
-        
       </div>
 
       <h1>
-        <span className="popup-text">{text}</span>, Full Stack Developer | Mobile & Web .
+        <span className="popup-text">{text}</span>, Full Stack Developer | Mobile & Web.
       </h1>
-      
+
       <p>
-      I am a Full-Stack Mobile & Web Developer passionate about creating efficient solutions and eager <br/>to learn 
-      new technologies for better application delivery.
+        I am a Full-Stack Mobile & Web Developer passionate about creating efficient solutions and eager
+        <br />
+        to learn new technologies for better application delivery.
       </p>
-      
 
       <div className="hero-action">
-        <div className="hero-connect"> <Link className="anchor-link"  to="contact" smooth={true} duration={500}>Connect With Me </Link></div>
-        <div className="hero-resume">My Resume</div>
+        <div className="hero-connect">
+          <Link className="anchor-link" to="contact" smooth={true} duration={500}>
+            Connect With Me
+          </Link>
+        </div>
+        <a 
+          href="https://drive.google.com/file/d/12lOcvylDYw5QgMxWTs3-xlfZjHUHpQKc/view" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hero-resume"
+        >
+          My Resume
+        </a>
       </div>
     </div>
   );
