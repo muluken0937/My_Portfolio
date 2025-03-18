@@ -1,3 +1,4 @@
+/* Main Services Section */
 .services {
     display: flex;
     flex-direction: column;
@@ -5,8 +6,10 @@
     justify-content: center;
     gap: 60px;
     margin: 60px 10%;
+    position: relative;
 }
 
+/* Services Title */
 .services-title {
     position: relative;
     text-align: center;
@@ -28,30 +31,80 @@
     border-radius: 20%;
 }
 
-/* Service container - responsive grid */
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+/* Swiper Styles */
+.services-swiper {
     width: 100%;
     max-width: 1200px;
-    margin-bottom: 60px;
+    padding-bottom: 50px;
+    overflow: visible;
 }
 
-/* Individual service box */
+/* Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #b415ff;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+/* Move Navigation Buttons to the Corners */
+.swiper-button-prev {
+    left: -50px;
+}
+
+.swiper-button-next {
+    right: -50px;
+}
+
+/* Custom Pagination */
+.swiper-pagination-custom {
+    position: absolute;
+    bottom: -20px;
+    right: 10%;
+    text-align: right;
+}
+
+.swiper-pagination-bullet {
+    background: #b415ff;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ff00ff;
+    opacity: 1;
+}
+
+/* Individual Service Card */
 .services-format {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
-    padding: 40px;
+    height: 450px;
+    width: 400px;
+    gap: 20px;
+    padding: 40px 20px;
     border-radius: 10px;
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease, border 0.3s ease;
     cursor: pointer;
+    will-change: transform;
 }
 
+/* Hover Effect */
+.services-format:hover {
+    border: 2px solid #ff00ff;
+    background: linear-gradient(45deg, #3f0028, #582300);
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* Service Titles */
 .services-format h3 {
     font-size: 24px;
     font-weight: 600;
@@ -60,12 +113,13 @@
 .services-format h2 {
     font-size: 32px;
     font-weight: 800;
-    background: linear-gradient(270deg, #DF8908 50%, #B415FF 100%);
+    background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+/* Service Description */
 .services-format p {
     color: #d4d4d4;
     font-size: 20px;
@@ -81,13 +135,6 @@
     margin-top: 10px;
     font-size: 18px;
     font-weight: 500;
-}
-
-/* Hover Effects */
-.services-format:hover {
-    border: 2px solid #ff00ff;
-    background: linear-gradient(45deg, #3f0028, #582300);
-    transform: scale(1.05);
 }
 
 /* Responsive Adjustments */
@@ -110,17 +157,12 @@
         padding: 30px;
     }
 
-    .services-format h3 {
-        font-size: 22px;
+    .swiper-button-prev {
+        left: -30px;
     }
 
-    .services-format h2 {
-        font-size: 28px;
-    }
-
-    .services-format p {
-        font-size: 18px;
-        line-height: 28px;
+    .swiper-button-next {
+        right: -30px;
     }
 }
 
@@ -139,26 +181,13 @@
         width: 180px;
     }
 
-    .services-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
     .services-format {
         padding: 25px;
     }
 
-    .services-format h3 {
-        font-size: 20px;
-    }
-
-    .services-format h2 {
-        font-size: 24px;
-    }
-
-    .services-format p {
+    .swiper-button-prev,
+    .swiper-button-next {
         font-size: 16px;
-        line-height: 26px;
     }
 }
 
@@ -177,29 +206,15 @@
         width: 150px;
     }
 
-    .services-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
     .services-format {
         padding: 20px;
     }
 
-    .services-format h3 {
-        font-size: 18px;
+    .swiper-button-prev {
+        left: -15px;
     }
 
-    .services-format h2 {
-        font-size: 22px;
-    }
-
-    .services-format p {
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    .services-readmore {
-        font-size: 16px;
+    .swiper-button-next {
+        right: -15px;
     }
 }
