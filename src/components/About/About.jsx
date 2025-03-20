@@ -70,15 +70,15 @@ const About = () => {
         </div>
         <div className="about-skills">
           {[
-            { name: "HTML & CSS", width: "90%", icon: <FaHtml5 /> },
-            { name: "JavaScript", width: "65%", icon: <FaJs /> },
-            { name: "Python", width: "60%", icon: <FaPython /> },
-            { name: "React Js", width: "90%", icon: <FaReact /> },
-            { name: "React Native", width: "60%", icon: <FaReact /> },
-            { name: "Node Js", width: "80%", icon: <FaNodeJs /> },
-            { name: "Django", width: "50%", icon: <SiDjango /> },
-            { name: "Mongo Db", width: "80%", icon: <SiMongodb /> },
-            { name: "SQLite", width: "55%", icon: <SiSqlite /> },
+            { name: "HTML & CSS", width: "100%", icon: <FaHtml5 /> },
+            { name: "JavaScript", width: "100%", icon: <FaJs /> },
+            { name: "Python", width: "100%", icon: <FaPython /> },
+            { name: "React Js", width: "100%", icon: <FaReact /> },
+            { name: "React Native", width: "100%", icon: <FaReact /> },
+            { name: "Node Js", width: "100%", icon: <FaNodeJs /> },
+            { name: "Django", width: "100%", icon: <SiDjango /> },
+            { name: "Mongo Db", width: "100%", icon: <SiMongodb /> },
+            { name: "SQLite", width: "100%", icon: <SiSqlite /> },
           ].map((skill, index) => (
             <div className="about-skill" key={index}>
               <div className="skill-icon">{skill.icon}</div>
