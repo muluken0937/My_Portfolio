@@ -25,10 +25,10 @@
 
 .about-title img {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     right: 0;
-    width: 205px;
-    height: 90px;
+    width: 150px;
+    height: 50px;
     border-radius: 60%;
     z-index: -1;
 }
@@ -64,10 +64,10 @@
     flex-direction: column;
 }
 
-/* Updated Skills Section */
+/* Updated Skills Section with Embedded Icons */
 .about-skills {
     display: flex;
-    height: 280px; /* Increased height for icon space */
+    height: 320px;
     justify-content: space-between;
     gap: 20px;
     position: relative;
@@ -77,13 +77,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    padding: 60px 20px 20px; /* Added top padding for icon */
+    width: 8%;
+    padding: 120px 20px 20px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 125px 125px 15px 15px; /* Curved top */
+    border-radius: 100px 100px 15px 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    overflow: visible;
+    margin-top: 60px;
+    border: 2px solid rgba(223, 137, 8, 0.3);
 }
 
 .about-skill:hover {
@@ -92,17 +95,21 @@
 }
 
 .skill-icon {
-    font-size: 32px;
+    font-size: 120px;
     color: #DF8908;
     position: absolute;
-    top: -30px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
+    padding: 25px;
     border-radius: 50%;
-    border: 2px solid rgba(223, 136, 8, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 0px rgba(151, 27, 27, 0.2);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
 .skill-details {
@@ -111,7 +118,7 @@
 }
 
 .skill-details p {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #d4d4d4;
     margin-bottom: 15px;
@@ -221,14 +228,17 @@
 
     .about-skill {
         width: 45%;
-        padding: 50px 15px 15px;
-        border-radius: 20px 20px 10px 10px;
+        padding: 100px 15px 15px;
+        border-radius: 80px 80px 10px 10px;
+        margin-top: 50px;
     }
 
     .skill-icon {
-        top: -25px;
-        padding: 12px;
-        font-size: 28px;
+        width: 100px;
+        height: 100px;
+        top: -50px;
+        font-size: 36px;
+        padding: 20px;
     }
 }
 
@@ -258,14 +268,17 @@
 
     .about-skill {
         width: 100%;
-        padding: 40px 10px 10px;
-        border-radius: 15px 15px 8px 8px;
+        padding: 80px 10px 10px;
+        border-radius: 60px 60px 8px 8px;
+        margin-top: 40px;
     }
 
     .skill-icon {
-        top: -20px;
-        padding: 10px;
-        font-size: 24px;
+        width: 80px;
+        height: 80px;
+        top: -40px;
+        font-size: 28px;
+        padding: 15px;
     }
 
     .about-achievement h1 {
