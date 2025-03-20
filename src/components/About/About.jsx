@@ -95,6 +95,7 @@ const About = () => {
           ))}
         </div>
       </div>
+      <hr className="hr" />
       <div className="about-achievements">
         <div className="about-achievement">
           <h1 className="count" data-target="3">
