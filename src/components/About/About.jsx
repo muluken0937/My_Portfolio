@@ -8,6 +8,7 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import { SiDjango, SiMongodb, SiSqlite } from "react-icons/si";
+import { motion } from "framer-motion"; // Import Framer Motion
 import "./About.css";
 import theme from "../../assets/shape1.png";
 import profile_img from "../../assets/profile1.jpg";
@@ -33,6 +34,12 @@ const About = () => {
       updateCount();
     });
   }, []);
+
+  // Framer Motion Variants for Skills
+  const skillVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
 
   return (
     <div id="about" className="about">
@@ -68,7 +75,22 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="about-skills">
+
+        {/* Skills Section with Framer Motion */}
+        <motion.div
+          className="about-skills"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2, // Stagger the animations
+              },
+            },
+          }}
+        >
           {[
             { name: "HTML", width: "100%", icon: <FaHtml5 /> },
             { name: "CSS", width: "100%", icon: <FaCss3Alt /> },
@@ -81,7 +103,11 @@ const About = () => {
             { name: "MongoDB", width: "100%", icon: <SiMongodb /> },
             { name: "SQLite", width: "100%", icon: <SiSqlite /> },
           ].map((skill, index) => (
-            <div className="about-skill" key={index}>
+            <motion.div
+              className="about-skill"
+              key={index}
+              variants={skillVariants} // Apply animation variants
+            >
               <div className="skill-icon">{skill.icon}</div>
               <div className="skill-details">
                 <p>{skill.name}</p>
@@ -92,9 +118,9 @@ const About = () => {
                   ></div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <hr className="hr" />
       <div className="about-achievements">
