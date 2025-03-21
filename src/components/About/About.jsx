@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {
   FaHtml5,
-  FaCss3,
+  FaCss3Alt,
   FaJs,
   FaPython,
   FaReact,
@@ -70,14 +70,15 @@ const About = () => {
         </div>
         <div className="about-skills">
           {[
-            { name: "HTML & CSS", width: "100%", icon: <FaHtml5 /> },
+            { name: "HTML", width: "100%", icon: <FaHtml5 /> },
+            { name: "CSS", width: "100%", icon: <FaCss3Alt /> },
             { name: "JavaScript", width: "100%", icon: <FaJs /> },
             { name: "Python", width: "100%", icon: <FaPython /> },
             { name: "React Js", width: "100%", icon: <FaReact /> },
             { name: "React Native", width: "100%", icon: <FaReact /> },
             { name: "Node Js", width: "100%", icon: <FaNodeJs /> },
             { name: "Django", width: "100%", icon: <SiDjango /> },
-            { name: "Mongo Db", width: "100%", icon: <SiMongodb /> },
+            { name: "MongoDB", width: "100%", icon: <SiMongodb /> },
             { name: "SQLite", width: "100%", icon: <SiSqlite /> },
           ].map((skill, index) => (
             <div className="about-skill" key={index}>
