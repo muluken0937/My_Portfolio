@@ -94,7 +94,7 @@ const About = () => {
           {[
             { name: "HTML", width: "100%", icon: <FaHtml5 /> },
             { name: "CSS", width: "100%", icon: <FaCss3Alt /> },
-            { name: "JavaScript", width: "100%", icon: <FaJs /> },
+            { name: "Java Script", width: "100%", icon: <FaJs /> },
             { name: "Python", width: "100%", icon: <FaPython /> },
             { name: "React Js", width: "100%", icon: <FaReact /> },
             { name: "React Native", width: "100%", icon: <FaReact /> },
