@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -8,31 +8,52 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 import { SiDjango, SiMongodb, SiSqlite } from "react-icons/si";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import "./About.css";
 import theme from "../../assets/shape1.png";
 import profile_img from "../../assets/profile1.jpg";
 
 const About = () => {
+  const achievementsRef = useRef(null);
+
   useEffect(() => {
-    const counters = document.querySelectorAll(".count");
-    counters.forEach((counter) => {
-      counter.innerText = "0";
-      const target = +counter.getAttribute("data-target");
-      const increment = target / 100;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll(".count");
+            counters.forEach((counter) => {
+              const target = +counter.getAttribute("data-target");
+              const duration = 2000; // Animation duration in ms
+              const startTime = performance.now();
+              
+              const updateCount = (currentTime) => {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                const value = Math.floor(progress * target);
+                
+                counter.textContent = value === target ? `${target}+` : value;
+                
+                if (progress < 1) {
+                  requestAnimationFrame(updateCount);
+                }
+              };
+              
+              requestAnimationFrame(updateCount);
+            });
+            
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-      const updateCount = () => {
-        const current = +counter.innerText;
-        if (current < target) {
-          counter.innerText = Math.ceil(current + increment);
-          setTimeout(updateCount, 30);
-        } else {
-          counter.innerText = target + "+";
-        }
-      };
+    if (achievementsRef.current) {
+      observer.observe(achievementsRef.current);
+    }
 
-      updateCount();
-    });
+    return () => observer.disconnect();
   }, []);
 
   // Framer Motion Variants for Skills
@@ -59,13 +80,13 @@ const About = () => {
             <div className="about-para">
               <p>
                 I am a passionate Mobile and Web Developer with experience in
-                building modern applications. I’m always eager to learn and
+                building modern applications. I'm always eager to learn and
                 bring creative solutions to life.
               </p>
               <p>
                 I previously worked at <strong>Scitech Valley</strong>, where I
                 contributed to ERP and sales performance tracking systems.
-                Currently, I’m part of <strong>EthixDev</strong>, focusing on
+                Currently, I'm part of <strong>EthixDev</strong>, focusing on
                 both web and mobile development, using technologies like{" "}
                 <strong>
                   React, React Native, Node.js, Python, and Django
@@ -86,7 +107,7 @@ const About = () => {
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: 0.2, // Stagger the animations
+                staggerChildren: 0.2,
               },
             },
           }}
@@ -94,7 +115,7 @@ const About = () => {
           {[
             { name: "HTML", width: "100%", icon: <FaHtml5 /> },
             { name: "CSS", width: "100%", icon: <FaCss3Alt /> },
-            { name: "Java Script", width: "100%", icon: <FaJs /> },
+            { name: "JavaScript", width: "100%", icon: <FaJs /> },
             { name: "Python", width: "100%", icon: <FaPython /> },
             { name: "React Js", width: "100%", icon: <FaReact /> },
             { name: "React Native", width: "100%", icon: <FaReact /> },
@@ -106,7 +127,7 @@ const About = () => {
             <motion.div
               className="about-skill"
               key={index}
-              variants={skillVariants} // Apply animation variants
+              variants={skillVariants}
             >
               <div className="skill-icon">{skill.icon}</div>
               <div className="skill-details">
@@ -123,7 +144,7 @@ const About = () => {
         </motion.div>
       </div>
       <hr className="hr" />
-      <div className="about-achievements">
+      <div className="about-achievements" ref={achievementsRef}>
         <div className="about-achievement">
           <h1 className="count" data-target="3">
             0
